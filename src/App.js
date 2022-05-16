@@ -21,6 +21,14 @@ function App() {
         >
           Learn React
         </a>
+        <a
+          className="github-link"
+          href="https://github.com/g0sie/react-test"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          repo
+        </a>
       </header>
     </div>
   );
