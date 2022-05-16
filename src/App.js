@@ -8,19 +8,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src="miku.png" className="App-logo" alt="logo"/>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Witaj użytkowniku!
         </p>
-        <button onClick={handleOpenAlert}>Open alert</button>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <button className='alert-button' onClick={handleOpenAlert}>
+          Open alert
+        </button>
         <a
           className="github-link"
           href="https://github.com/g0sie/react-test"
