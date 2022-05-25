@@ -38,7 +38,7 @@ export const InputForm = (props?: InputFormProps) => {
         if (formReadyToSubmit) {
             localStorage.setItem(storageFormKey, inputValue)
         }
-    }, [inputValue])
+    }, [inputValue, formReadyToSubmit])
 
     // wykonuje się przy pierwszym renderze
     useEffect(() => {
@@ -52,7 +52,7 @@ export const InputForm = (props?: InputFormProps) => {
             }
         }
         setInputValue(valueToSet);
-    }, [])
+    }, [props])
 
     return <div className="form">
         {displayError && <p className="error">{errorMessage}</p>}
