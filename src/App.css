@@ -4,7 +4,6 @@
 
 .App-logo {
   height: 40vmin;
-  width: 40vmin;
   pointer-events: none;
 }
 
@@ -25,24 +24,8 @@
   color: white;
 }
 
-.github-link {
+.App-link {
   color: #61dafb;
-}
-
-.alert-button {
-  background-color: #074750;
-  border: 2px solid #0d7886;
-  color: white;
-  padding: 10px 35px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 25px;
-  transition-duration: 0.4s;
-}
-
-.alert-button:hover {
-  background-color: #0d7886;
 }
 
 @keyframes App-logo-spin {

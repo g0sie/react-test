@@ -1,0 +1,37 @@
+.form {
+    width: 50%;
+}
+
+.input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: #0e8696;
+}
+
+.submit {
+    background-color: #074750;
+    border: 2px solid #0d7886;
+    color: white;
+    padding: 10px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    transition-duration: 0.4s;
+}
+
+.submit:hover {
+    background-color: #0d7886;
+}
+
+.submit:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    background-color: #08525c;
+}
+
+.error {
+    color: rgb(188, 95, 250);
+}
