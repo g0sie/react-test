@@ -1,13 +1,11 @@
-import React from 'react';
 import './App.css';
-import { InputForm } from './InputForm'
+import { InputForm } from './components/InputForm'
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <InputForm defaultValue={'hello form'} />
-      </header>
+      <Navbar />
     </div>
   );
 }

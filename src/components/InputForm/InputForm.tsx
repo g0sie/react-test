@@ -1,5 +1,6 @@
 import './InputForm.css'
 import { useState, useEffect, useCallback } from "react"
+import Button from '../Button/Button'
 
 interface InputFormProps {
     defaultValue?: string;
@@ -11,7 +12,6 @@ export const InputForm = (props?: InputFormProps) => {
     const [displayError, setDisplayError] = useState<boolean>(false)
     const [inputValue, setInputValue] = useState<string>('123123')
     const [errorMessage, setErrorMessage] = useState<string>('')
-    const [border, setBorder] = useState<string>('')
 
     const formReadyToSubmit = !displayError && inputValue
 
@@ -26,10 +26,8 @@ export const InputForm = (props?: InputFormProps) => {
                 setErrorMessage('za dużo znaków, musi być max 20')
             }
             setDisplayError(true)
-            setBorder('2px solid red')
         } else {
             setDisplayError(false)
-            setBorder('')
         }
     }
 
@@ -56,8 +54,8 @@ export const InputForm = (props?: InputFormProps) => {
 
     return <div className="form">
         {displayError && <p className="error">{errorMessage}</p>}
-        <input className='input' onInput={handleInputChange} value={inputValue} style={{border: border}} type="text" />
+        <input className='input' onInput={handleInputChange} value={inputValue} type="text" />
         <br></br>
-        <button className='submit' onClick={handleSubmit} disabled={!formReadyToSubmit}>submit data</button>
+        <Button onClick={handleSubmit} disabled={!formReadyToSubmit} content='submit data' />
     </div>
 }
