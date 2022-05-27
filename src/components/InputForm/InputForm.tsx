@@ -53,7 +53,8 @@ export const InputForm = (props?: InputFormProps) => {
     }, [props])
 
     return <div className="form">
-        {displayError && <p className="error">{errorMessage}</p>}
+        <p className={displayError ? 'error active' : 'error'}>{errorMessage}</p>
+        <img className={displayError ? 'error-img active' : 'error-img'} src='error.gif' />
         <input className='input' onInput={handleInputChange} value={inputValue} type="text" />
         <br></br>
         <Button onClick={handleSubmit} disabled={!formReadyToSubmit} content='submit data' />

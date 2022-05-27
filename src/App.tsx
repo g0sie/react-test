@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import './App.css';
 
@@ -16,7 +16,7 @@ function App() {
           <Route path='/' element={<div>Main</div>} />
           <Route path='*' element={<div>404</div>} />
           <Route path='/about' element={<div>About</div>} />
-          <Route path='/form' element={<div>Form</div>} />
+          <Route path='/form' element={<InputForm />} />
         </Routes>
       </div>
     </Router>

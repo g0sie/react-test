@@ -5,6 +5,10 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+body {
+  background: rgb(17, 72, 80);
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
