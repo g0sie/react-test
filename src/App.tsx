@@ -5,6 +5,11 @@ import './App.css';
 import { InputForm } from './components/InputForm'
 import Navbar from './components/Navbar/Navbar';
 
+import about from "./pages/about";
+import index from "./pages";
+import spinningMiku from "./pages/spinningmiku";
+import contact from "./pages/contact";
+
 function App() {
   return (
     <Router>
@@ -13,10 +18,11 @@ function App() {
           <Navbar />
         </div>
         <Routes>
-          <Route path='/' element={<div>Main</div>} />
+          <Route path='/' element={index()} />
           <Route path='*' element={<div>404</div>} />
-          <Route path='/about' element={<div>About</div>} />
-          <Route path='/form' element={<InputForm />} />
+          <Route path='/about' element={about()} />
+          <Route path='/contact' element={contact()} />
+          <Route path='/spinningmiku' element={spinningMiku()} />
         </Routes>
       </div>
     </Router>

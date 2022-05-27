@@ -9,11 +9,11 @@ const MenuItems = [
     },
     {
         title: 'Contact',
-        url: '/form',
+        url: '/contact',
     },
     {
-        title: 'Another',
-        url: '/another',
+        title: 'Spinning Miku',
+        url: '/spinningmiku',
     },
 ]
 

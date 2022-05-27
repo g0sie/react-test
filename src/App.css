@@ -28,3 +28,23 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.gifs {
+  text-align: center;
+  padding-top: 30px;
+}
+
+@media screen and (max-width:960px) {
+  .gif {
+    width: 90%;
+  }
+}
+
+p {
+  color: white;
+}
+
+a {
+  color: rgb(189, 253, 253);
+  text-decoration: none;
+}
