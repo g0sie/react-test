@@ -1,19 +1,19 @@
 const MenuItems = [
     {
         title: 'Home',
-        url: '#',
+        url: '/',
     },
     {
         title: 'About',
-        url: '#',
+        url: '/about',
     },
     {
         title: 'Contact',
-        url: '#',
+        url: '/form',
     },
     {
         title: 'Another',
-        url: '#',
+        url: '/another',
     },
 ]
 
