@@ -1,5 +1,6 @@
 :root {
     --primary: #249b91;
+    --light: rgb(189, 253, 253);
 }
 
 .btn {
@@ -13,9 +14,16 @@
 .btn:hover {
     padding: 8px 20px;
     transition: all 0.3s ease-out;
-    background: #fff;
+    background: var(--light);
     color: var(--primary);
     transition: 250ms;
+}
+
+.btn:disabled, .btn:disabled:hover {
+    background: #fff;
+    color: var(--primary);
+    padding: 12px 26px;
+    cursor: not-allowed;
 }
 
 .btn--primary {
