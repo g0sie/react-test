@@ -23,7 +23,7 @@ interface ButtonProps {
 export const Button = (props?: ButtonProps) => {
   console.log(props?.style as string)
 
-  const checkButtonStyle = STYLES.includes(props?.style as string) && props?.style != undefined ? props?.style : STYLES[0]
+  const checkButtonStyle = STYLES.includes(props?.style as string) && props?.style !== undefined ? props?.style : STYLES[0]
   const checkButtonSize = SIZES.includes(props?.size as string) ? props?.size : SIZES[0]
 
   return <div>

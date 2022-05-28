@@ -54,7 +54,7 @@ export const InputForm = (props?: InputFormProps) => {
 
     return <div className="form">
         <p className={displayError ? 'error active' : 'error'}>{errorMessage}</p>
-        <img className={displayError ? 'error-img active' : 'error-img'} src='error.gif' />
+        <img className={displayError ? 'error-img active' : 'error-img'} src='error.gif' alt='miku is not happy' />
         <input className='input' onInput={handleInputChange} value={inputValue} type="text" />
         <br></br>
         <Button onClick={handleSubmit} disabled={!formReadyToSubmit} content='submit data' />
