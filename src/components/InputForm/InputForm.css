@@ -1,0 +1,61 @@
+.form {
+    display: flexbox;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.input {
+    width: 95%;
+    padding: 12px 20px;
+    margin: 4% 0 1%;
+    box-sizing: border-box;
+    background-color: #0e8696;
+    border-radius: 4px;
+}
+
+.input:focus {
+    background-color: #1f8b99;
+}
+
+.error {
+    color: rgb(188, 95, 250);
+    margin: 8% 0 1%;
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.error.active {
+    color: rgb(188, 95, 250);
+    margin: 8% 0 1%;
+    transition: all 0.5s ease;
+    opacity: 1;
+}
+
+@media screen and (max-width: 960px) {
+    .error-img {
+        width: 90%;
+        position: relative;
+        opacity: 0;
+        transition: all 0.5s ease;
+    }
+
+    .error-img.active {
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+}
+
+@media screen and (min-width: 961px) {
+    .error-img {
+        display: flexbox;
+        position: relative;
+        opacity: 0;
+        transition: all 0.5s ease;
+    }
+
+    .error-img.active {
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+}

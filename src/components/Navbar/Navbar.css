@@ -1,0 +1,117 @@
+:root {
+    --primary: rgb(25, 104, 114);
+    --light: rgb(189, 253, 253);
+    --dark: rgb(17, 72, 80);
+}
+
+.NavbarItems {
+    background: linear-gradient(45deg, rgb(30, 221, 221), 15%, var(--primary));
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.navbar-logo {
+    height: 50px;
+    justify-self: start;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 10px;
+    list-style: none;
+    text-align: center;
+    width: 70vw;
+    justify-content: end;
+}
+
+.nav-links {
+    color:var(--light);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+.nav-links:hover {
+    background-color: var(--primary);
+    border-radius: 4px;
+    transition: all 0.2s ease-out;
+}
+
+.fa-bars {
+    color: var(--light);
+}
+
+@media screen and (max-width: 960px) {
+    .NavbarItems {
+        position:relative;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+
+    .nav-menu.active {
+        background: var(--primary);
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
+    }
+
+    .nav-links {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+
+    .nav-links:hover {
+        background-color: var(--dark);
+        border-radius: 0;
+    }
+
+    .navbar-logo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(0%, 30%);
+    }
+
+    .menu-icon {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    .fa-times {
+        color: var(--light);
+        font-size: 2rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-125%, 70%);
+    }
+}
+
+@media screen and (min-width: 961px) {
+    .menu-icon {
+        display: none;
+    }
+}
