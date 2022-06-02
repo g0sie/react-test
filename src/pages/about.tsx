@@ -2,7 +2,7 @@
 
 export const about = () => {
     return (
-        <div className="gifs">
+        <div className="page">
             <img className='gif' src="author.jpg" alt="miku is glad you're here"></img>
             <p>Gosia</p>
             <br></br>
