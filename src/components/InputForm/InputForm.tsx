@@ -34,6 +34,10 @@ export const InputForm = (props?: InputFormProps) => {
         }
     }
 
+    const handleEnter = (event: any) => {
+        if (event.key === 'Enter') handleSubmit()
+    }
+
     // funkcja zmienia się gdy inputValue się zmienia
     const handleSubmit = useCallback(() => {
         if (formReadyToSubmit) {
@@ -65,7 +69,7 @@ export const InputForm = (props?: InputFormProps) => {
             <source src='error.webm' type='video/webm' />
             <source src='error.mp4' type='video/mp4' />
         </video>
-        <input className='input' onInput={handleInputChange} value={inputValue} type="text" />
+        <input className='input' onInput={handleInputChange} value={inputValue} type="text" onKeyUp={handleEnter} />
         <br></br>
         <Button onClick={handleSubmit} disabled={!formReadyToSubmit} content='submit data' />
         <Characters characters={characters} />

@@ -1,4 +1,3 @@
-import CharactersList from './CharactersList'
 import Character from './Character'
 import CharacterProps from './CharacterProps'
 
