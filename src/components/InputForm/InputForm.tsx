@@ -1,6 +1,8 @@
 import './InputForm.css'
 import { useState, useEffect, useCallback } from "react"
 import Button from '../Button/Button'
+import Characters from '../Characters/Characters'
+import CharacterProps from '../Characters/CharacterProps'
 
 interface InputFormProps {
     defaultValue?: string;
@@ -12,6 +14,7 @@ export const InputForm = (props?: InputFormProps) => {
     const [displayError, setDisplayError] = useState<boolean>(false)
     const [inputValue, setInputValue] = useState<string>('123123')
     const [errorMessage, setErrorMessage] = useState<string>('')
+    const [characters, setCharacters] = useState<Array<CharacterProps>>()
 
     const formReadyToSubmit = !displayError && inputValue
 
@@ -35,6 +38,10 @@ export const InputForm = (props?: InputFormProps) => {
     const handleSubmit = useCallback(() => {
         if (formReadyToSubmit) {
             localStorage.setItem(storageFormKey, inputValue)
+            fetch(`https://rickandmortyapi.com/api/character/?name=${inputValue}`)
+                .then(response => response.json())
+                .then(res => res['results'])
+                .then(res => setCharacters(res))
         }
     }, [inputValue, formReadyToSubmit])
 
@@ -61,5 +68,6 @@ export const InputForm = (props?: InputFormProps) => {
         <input className='input' onInput={handleInputChange} value={inputValue} type="text" />
         <br></br>
         <Button onClick={handleSubmit} disabled={!formReadyToSubmit} content='submit data' />
+        <Characters characters={characters} />
     </div>
 }
