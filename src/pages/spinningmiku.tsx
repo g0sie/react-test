@@ -3,7 +3,14 @@
 export const spinningMiku = () => {
     return (
         <div className="page">
-            <img className='gif' src="miku360.gif" alt="miku is spinning around"></img>
+            <video className='gif' autoPlay loop muted playsInline>
+                <source src='miku360.webm' type='video/webm' />
+                <source src='miku360.mp4' type='video/mp4' />
+            </video>
+            <video className='gif' autoPlay loop muted playsInline>
+                <source src='miku360.webm' type='video/webm' />
+                <source src='miku360.mp4' type='video/mp4' />
+            </video>
         </div>
     );
 }

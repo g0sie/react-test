@@ -1,8 +1,10 @@
 .form {
-    display: flexbox;
+    display: grid;
+    grid-template-columns: 100%;
+    align-items: center;
+    justify-items: center;
     text-align: center;
     justify-content: center;
-    width: 100%;
 }
 
 .input {
@@ -32,30 +34,14 @@
     opacity: 1;
 }
 
-@media screen and (max-width: 960px) {
-    .error-img {
-        width: 90%;
-        position: relative;
-        opacity: 0;
-        transition: all 0.5s ease;
-    }
-
-    .error-img.active {
-        opacity: 1;
-        transition: all 0.5s ease;
-    }
+.error-img {
+    max-width: 90%;
+    position: relative;
+    opacity: 0;
+    transition: all 0.5s ease;
 }
 
-@media screen and (min-width: 961px) {
-    .error-img {
-        display: flexbox;
-        position: relative;
-        opacity: 0;
-        transition: all 0.5s ease;
-    }
-
-    .error-img.active {
-        opacity: 1;
-        transition: all 0.5s ease;
-    }
+.error-img.active {
+    opacity: 1;
+    transition: all 0.5s ease;
 }

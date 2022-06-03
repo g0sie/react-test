@@ -54,7 +54,10 @@ export const InputForm = (props?: InputFormProps) => {
 
     return <div className="form">
         <p className={displayError ? 'error active' : 'error'}>{errorMessage}</p>
-        <img className={displayError ? 'error-img active' : 'error-img'} src='error.gif' alt='miku is not happy' />
+        <video className={displayError ? 'error-img active' : 'error-img'} autoPlay loop muted playsInline>
+            <source src='error.webm' type='video/webm' />
+            <source src='error.mp4' type='video/mp4' />
+        </video>
         <input className='input' onInput={handleInputChange} value={inputValue} type="text" />
         <br></br>
         <Button onClick={handleSubmit} disabled={!formReadyToSubmit} content='submit data' />
