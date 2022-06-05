@@ -63,15 +63,18 @@ export const InputForm = (props?: InputFormProps) => {
         setInputValue(valueToSet);
     }, [props])
 
-    return <div className="form">
-        <p className={displayError ? 'error active' : 'error'}>{errorMessage}</p>
-        <video className={displayError ? 'error-img active' : 'error-img'} autoPlay loop muted playsInline>
-            <source src='error.webm' type='video/webm' />
-            <source src='error.mp4' type='video/mp4' />
-        </video>
-        <input className='input' onInput={handleInputChange} value={inputValue} type="text" onKeyUp={handleEnter} />
-        <br></br>
-        <Button onClick={handleSubmit} disabled={!formReadyToSubmit} content='submit data' />
+    return <div className='container'>
+        <div className="form">
+            <p className={displayError ? 'error active' : 'error'}>{errorMessage}</p>
+            <video className={displayError ? 'error-img active' : 'error-img'} autoPlay loop muted playsInline>
+                <source src='error.webm' type='video/webm' />
+                <source src='error.mp4' type='video/mp4' />
+            </video>
+            <label>Wyszukaj postać z Rick i Morty</label>
+            <input className='input' onInput={handleInputChange} value={inputValue} type="text" onKeyUp={handleEnter} />
+            <br></br>
+            <Button onClick={handleSubmit} disabled={!formReadyToSubmit} content='submit data' />
+        </div>
         <Characters characters={characters} />
     </div>
 }

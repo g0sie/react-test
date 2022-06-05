@@ -1,6 +1,8 @@
 import Character from './Character'
 import CharacterProps from './CharacterProps'
 
+import './Characters.css'
+
 interface CharactersProps {
   characters?: Array<CharacterProps>,
 }
@@ -8,7 +10,7 @@ interface CharactersProps {
 export const Characters = (props?: CharactersProps) => {
 
   return (
-    <div>
+    <div className='characters'>
       {props?.characters?.map((character) => {
         return (
           <Character
