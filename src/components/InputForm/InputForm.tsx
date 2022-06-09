@@ -1,6 +1,8 @@
 import './InputForm.css'
 import { useState, useEffect, useCallback } from "react"
 import Button from '../Button/Button'
+import Characters from '../Characters/Characters'
+import CharacterProps from '../Characters/CharacterProps'
 
 interface InputFormProps {
     defaultValue?: string;
@@ -12,6 +14,7 @@ export const InputForm = (props?: InputFormProps) => {
     const [displayError, setDisplayError] = useState<boolean>(false)
     const [inputValue, setInputValue] = useState<string>('123123')
     const [errorMessage, setErrorMessage] = useState<string>('')
+    const [characters, setCharacters] = useState<Array<CharacterProps>>()
 
     const formReadyToSubmit = !displayError && inputValue
 
@@ -31,10 +34,18 @@ export const InputForm = (props?: InputFormProps) => {
         }
     }
 
+    const handleEnter = (event: any) => {
+        if (event.key === 'Enter') handleSubmit()
+    }
+
     // funkcja zmienia się gdy inputValue się zmienia
     const handleSubmit = useCallback(() => {
         if (formReadyToSubmit) {
             localStorage.setItem(storageFormKey, inputValue)
+            fetch(`https://rickandmortyapi.com/api/character/?name=${inputValue}`)
+                .then(response => response.json())
+                .then(res => res['results'])
+                .then(res => setCharacters(res))
         }
     }, [inputValue, formReadyToSubmit])
 
@@ -52,11 +63,18 @@ export const InputForm = (props?: InputFormProps) => {
         setInputValue(valueToSet);
     }, [props])
 
-    return <div className="form">
-        <p className={displayError ? 'error active' : 'error'}>{errorMessage}</p>
-        <img className={displayError ? 'error-img active' : 'error-img'} src='error.gif' alt='miku is not happy' />
-        <input className='input' onInput={handleInputChange} value={inputValue} type="text" />
-        <br></br>
-        <Button onClick={handleSubmit} disabled={!formReadyToSubmit} content='submit data' />
+    return <div className='container'>
+        <div className="form">
+            <p className={displayError ? 'error active' : 'error'}>{errorMessage}</p>
+            <video className={displayError ? 'error-img active' : 'error-img'} autoPlay loop muted playsInline>
+                <source src='error.webm' type='video/webm' />
+                <source src='error.mp4' type='video/mp4' />
+            </video>
+            <label>Wyszukaj postać z Rick i Morty</label>
+            <input className='input' onInput={handleInputChange} value={inputValue} type="text" onKeyUp={handleEnter} />
+            <br></br>
+            <Button onClick={handleSubmit} disabled={!formReadyToSubmit} content='submit data' />
+        </div>
+        <Characters characters={characters} />
     </div>
 }

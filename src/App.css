@@ -9,35 +9,13 @@ body {
   background: rgb(17, 72, 80);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.gifs {
+.page {
   text-align: center;
   padding-top: 30px;
 }
 
-@media screen and (max-width:960px) {
-  .gif {
-    width: 90%;
-  }
+.gif {
+  max-width: 95vw;
 }
 
 p {
