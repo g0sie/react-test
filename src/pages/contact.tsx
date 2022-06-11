@@ -3,7 +3,9 @@ import { InputForm } from "../components/InputForm";
 
 export const contact = () => {
     return (
-        <InputForm />
+        <div className="page">
+            <InputForm />
+        </div>
     );
 }
 

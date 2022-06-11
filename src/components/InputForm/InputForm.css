@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 1500px;
 }
 
 .form {
@@ -13,16 +14,16 @@
 }
 
 .input {
+    max-width: 1500px;
     width: 90vw;
     padding: 12px 20px;
-    box-sizing: border-box;
-    background-color: #0e8696;
+    background-color: var(--primary);
     border-radius: 4px;
-    max-width: 1024px;
 }
 
 .input:focus {
-    background-color: #1f8b99;
+    background-color: var(--gray);
+    outline: none;
 }
 
 label {
@@ -32,27 +33,22 @@ label {
 }
 
 .error {
-    color: rgb(188, 95, 250);
-    margin: 8% 0 1%;
-    transition: all 0.5s ease;
+    color: var(--error);
+    transition: 0.5s ease;
     opacity: 0;
 }
 
 .error.active {
-    color: rgb(188, 95, 250);
-    margin: 8% 0 1%;
-    transition: all 0.5s ease;
     opacity: 1;
 }
 
 .error-img {
     max-width: 90vw;
-    position: relative;
+    margin: 20px 0;
     opacity: 0;
-    transition: all 0.5s ease;
+    transition: 0.5s ease;
 }
 
 .error-img.active {
     opacity: 1;
-    transition: all 0.5s ease;
 }
